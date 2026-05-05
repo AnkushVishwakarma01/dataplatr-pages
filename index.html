@@ -5,9 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Databricks Partner Layout</title>
 
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="assets/css/all.min.css" />
-
         <!-- Poppins Font -->
         <link rel="stylesheet" href="assets/css/google-poppins-font.css" />
 
@@ -29,44 +26,6 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="#">DATAPLATR</a>
-
-                <button
-                    class="navbar-toggler"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#nav"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="nav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Consulting Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Solutions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Accelerators</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Partners</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Resources</a>
-                        </li>
-                    </ul>
-                    <a href="#" class="btn btn-primary ms-0 ms-lg-3">
-                        Contact Us
-                    </a>
-                </div>
-            </div>
-        </nav>
-
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
@@ -99,26 +58,6 @@
                                 <i class="fa fa-solid fa-arrow-right-long"></i>
                             </a>
                         </div>
-
-                        <!-- Stats -->
-                        <div class="row stats text-center mt-5">
-                            <div
-                                class="col-md-4 stat-item border-end border-dark-subtle"
-                            >
-                                <strong>Accelator-led</strong>
-                                Deliveries
-                            </div>
-                            <div
-                                class="col-md-4 stat-item border-end border-dark-subtle"
-                            >
-                                <strong>Proven Adoptions</strong>
-                                Across Industries
-                            </div>
-                            <div class="col-md-4 stat-item">
-                                <strong>Faster</strong>
-                                Time-to-Value
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Right Badges -->
@@ -134,200 +73,123 @@
                     </div>
                 </div>
 
-                <!-- Stats -->
-                <div class="row stats text-center mt-5">
-                    <div
-                        class="col-md-3 stat-item border-end border-dark-subtle"
-                    >
-                        <strong>Since 2019</strong>
-                        Databricks Partner
-                    </div>
-                    <div
-                        class="col-md-3 stat-item border-end border-dark-subtle"
-                    >
-                        <strong>30+ Certified</strong>
-                        Experts
-                    </div>
-                    <div
-                        class="col-md-3 stat-item border-end border-dark-subtle"
-                    >
-                        <strong>Registered</strong>
-                        Consulting Partner
-                    </div>
-                    <div class="col-md-3 stat-item">
-                        <strong>Validated</strong>
-                        Data Partner
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stats-bar-item">
+                <span class="stats-bar-value">Since 2019</span>
+                <span class="stats-bar-label">Databricks Partner</span>
+            </div>
+            <div class="stats-bar-item">
+                <span class="stats-bar-value">30+</span>
+                <span class="stats-bar-label">Certified Experts</span>
+            </div>
+            <div class="stats-bar-item">
+                <span class="stats-bar-value">Registered</span>
+                <span class="stats-bar-label">Consulting Partner</span>
+            </div>
+            <div class="stats-bar-item">
+                <span class="stats-bar-value">Validated</span>
+                <span class="stats-bar-label">Data Partner</span>
+            </div>
+        </div>
+
+        <!-- Accelerator Carousel — replaced -->
+        <section class="accel-section">
+            <div class="accel-header">
+                <h2 class="accel-heading">Featured Databricks Accelerators</h2>
+                <p class="accel-sub">Pre-built, production-ready solutions to fast-track your analytics and AI initiatives.</p>
+            </div>
+            <div class="accel-carousel-wrap">
+                <button class="accel-arrow accel-prev" id="accelPrev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <div class="accel-viewport">
+                    <div class="accel-track" id="accelTrack">
+                        <div class="accel-card">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80" alt="Finance" />
+                            <div class="accel-card-body">
+                                <span class="accel-tag">Finance</span>
+                                <h3 class="accel-card-title">General Ledger Analytics Accelerator</h3>
+                                <p class="accel-card-desc">Pre-built financial data models and dashboards for faster GL insights.</p>
+                            </div>
+                        </div>
+                        <div class="accel-card">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80" alt="HR" />
+                            <div class="accel-card-body">
+                                <span class="accel-tag">HR</span>
+                                <h3 class="accel-card-title">Workday HR Analytics Accelerator</h3>
+                                <p class="accel-card-desc">Real-time workforce insights to optimize people performance.</p>
+                            </div>
+                        </div>
+                        <div class="accel-card">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Contact Center" />
+                            <div class="accel-card-body">
+                                <span class="accel-tag">Contact Center</span>
+                                <h3 class="accel-card-title">Contact Center Insights Hub</h3>
+                                <p class="accel-card-desc">360 degree view of contact center performance and customer experience.</p>
+                            </div>
+                        </div>
+                        <div class="accel-card">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Supply Chain" />
+                            <div class="accel-card-body">
+                                <span class="accel-tag">Supply Chain</span>
+                                <h3 class="accel-card-title">Supply Chain Analytics Accelerator</h3>
+                                <p class="accel-card-desc">End-to-end supply chain visibility and inventory optimization.</p>
+                            </div>
+                        </div>
+                        <div class="accel-card">
+                            <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="AI" />
+                            <div class="accel-card-body">
+                                <span class="accel-tag">AI &amp; ML</span>
+                                <h3 class="accel-card-title">AI/Agentic Analytics Accelerator</h3>
+                                <p class="accel-card-desc">GenAI and ML use cases to drive predictive and prescriptive outcomes.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <button class="accel-arrow accel-next" id="accelNext"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
             </div>
+            <div class="accel-dots" id="accelDots"></div>
         </section>
 
         <!--Marketplace-->
-        <section class="section">
+        <section class="marketplace-section">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row align-items-center g-3">
                     <!-- LEFT -->
-                    <div class="col-lg-6 text-center text-lg-start">
-                        <div class="subheading">
-                            LIVE FROM DATABRICKS MARKETPLACE
-                        </div>
-                        <div class="title mb-2">
+                    <div class="col-lg-6">
+                        <h2 class="marketplace-heading">
                             Driving Real Adoption with Marketplace Accelerators
-                        </div>
-                        <div class="desc mb-4">
+                        </h2>
+                        <p class="marketplace-desc">
                             Our accelerators are built to solve real business
-                            problems and drive measurable outcomes on
-                            Databricks.
-                        </div>
-
-                        <div class="row g-3 mb-3">
-                            <div class="col-6 col-md-3">
-                                <div class="card-box">
-                                    <div class="metric">1.4K+</div>
-                                    <div class="metric-text">
-                                        Marketplace Views
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6 col-md-3">
-                                <div class="card-box">
-                                    <div class="metric">250+</div>
-                                    <div class="metric-text">
-                                        Installation Attempts
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6 col-md-3">
-                                <div class="card-box">
-                                    <div class="metric">170+</div>
-                                    <div class="metric-text">
-                                        Successful Installations
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-6 col-md-3">
-                                <div class="card-box">
-                                    <div class="metric">20+</div>
-                                    <div class="metric-text">
-                                        Accelerators Live
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <a href="#" class="btn btn-outline-primary">
-                            View Full Marketplace Listings ↗
+                            problems and drive measurable outcomes on Databricks.
+                        </p>
+                        <a href="#" class="marketplace-btn">
+                            View Full Market Place Listing
                         </a>
                     </div>
 
-                    <!-- RIGHT -->
+                    <!-- RIGHT: 2x2 stat tiles -->
                     <div class="col-lg-6">
-                        <div class="chart-card">
-                            <h6 class="mb-3">
-                                Aggregate Listing Conversion Funnel
-                            </h6>
-                            <canvas id="funnelChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Accelerator -->
-        <section class="section">
-            <div class="container text-center">
-                <h2>Featured Databricks Accelerators</h2>
-                <p>
-                    Pre-built, production-ready solutions to fast-track your
-                    analytics and AI initiatives.
-                </p>
-
-                <div class="row g-4 justify-content-center">
-                    <!-- Card 1 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-blue">📊</div>
-                            <div class="card-title">
-                                General Ledger Analytics Accelerator
+                        <div class="stat-grid">
+                            <div class="stat-tile">
+                                <div class="stat-number">2K+</div>
+                                <div class="stat-label">Marketplace Views</div>
                             </div>
-                            <div class="card-text">
-                                Pre-built financial data models and dashboards
-                                for faster GL insights.
+                            <div class="stat-tile">
+                                <div class="stat-number">350+</div>
+                                <div class="stat-label">Installation Attempts</div>
                             </div>
-                            <a href="#" class="card-link align-baseline"
-                                >View on Marketplace ↗</a
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-green">👥</div>
-                            <div class="card-title">
-                                Workday HR Analytics Accelerator
+                            <div class="stat-tile">
+                                <div class="stat-number">250+</div>
+                                <div class="stat-label">Successful Installations</div>
                             </div>
-                            <div class="card-text">
-                                Real-time workforce insights to optimize people
-                                performance.
+                            <div class="stat-tile">
+                                <div class="stat-number">20+</div>
+                                <div class="stat-label">Accelerators Live</div>
                             </div>
-                            <a href="#" class="card-link"
-                                >View on Marketplace ↗</a
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-purple">🎧</div>
-                            <div class="card-title">
-                                Contact Center Insights Hub
-                            </div>
-                            <div class="card-text">
-                                360° view of contact center performance and
-                                customer experience.
-                            </div>
-                            <a href="#" class="card-link"
-                                >View on Marketplace ↗</a
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-orange">🚚</div>
-                            <div class="card-title">
-                                Supply Chain Analytics Accelerator
-                            </div>
-                            <div class="card-text">
-                                End-to-end supply chain visibility and inventory
-                                optimization.
-                            </div>
-                            <a href="#" class="card-link"
-                                >View on Marketplace ↗</a
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-teal">🧠</div>
-                            <div class="card-title">
-                                AI/Agentic Analytics Accelerator
-                            </div>
-                            <div class="card-text">
-                                GenAI and ML use cases to drive predictive and
-                                prescriptive outcomes.
-                            </div>
-                            <a href="#" class="card-link"
-                                >View on Marketplace ↗</a
-                            >
                         </div>
                     </div>
                 </div>
@@ -335,81 +197,56 @@
         </section>
 
         <!-- Consulting Service -->
-        <section class="services">
+        <section class="consulting-section">
             <div class="container">
-                <h2>End-to-End Databricks Consulting Services</h2>
-                <p class="subtitle">
-                    From strategy to managed services, we help you unlock the
-                    full potential of Databricks.
-                </p>
+                <h2 class="consulting-heading">End-to-End Databricks Consulting Services</h2>
 
-                <div class="services-row">
-                    <div class="service">
-                        <div class="icon icon-blue">📐</div>
-                        <h4>Advisory & Strategy</h4>
-                        <ul>
+                <div class="consulting-grid">
+                    <div class="consulting-card">
+                        <h4 class="consulting-card-title">Advisory &amp; Strategy</h4>
+                        <ul class="consulting-list">
                             <li>Data maturity assessment</li>
                             <li>Lakehouse roadmap</li>
                             <li>Cloud readiness</li>
                         </ul>
                     </div>
-
-                    <div class="divider"></div>
-
-                    <div class="service">
-                        <div class="icon icon-green">🧩</div>
-                        <h4>Implementation</h4>
-                        <ul>
+                    <div class="consulting-card">
+                        <h4 class="consulting-card-title">Implementation</h4>
+                        <ul class="consulting-list">
                             <li>End-to-end deployment</li>
                             <li>Data pipeline setup</li>
                             <li>Delta Lake optimization</li>
                         </ul>
                     </div>
-
-                    <div class="divider"></div>
-
-                    <div class="service">
-                        <div class="icon icon-purple">☁</div>
-                        <h4>Migration</h4>
-                        <ul>
+                    <div class="consulting-card">
+                        <h4 class="consulting-card-title">Migration</h4>
+                        <ul class="consulting-list">
                             <li>Legacy to Databricks migration</li>
                             <li>Automated data transfer</li>
-                            <li>Validation & testing</li>
+                            <li>Validation &amp; testing</li>
                         </ul>
                     </div>
-
-                    <div class="divider"></div>
-
-                    <div class="service">
-                        <div class="icon icon-orange">📊</div>
-                        <h4>BI & Analytics</h4>
-                        <ul>
+                    <div class="consulting-card">
+                        <h4 class="consulting-card-title">BI &amp; Analytics</h4>
+                        <ul class="consulting-list">
                             <li>BI tool integration</li>
                             <li>Real-time dashboards</li>
                             <li>Databricks SQL optimization</li>
                         </ul>
                     </div>
-
-                    <div class="divider"></div>
-
-                    <div class="service">
-                        <div class="icon icon-teal">🧠</div>
-                        <h4>AI & ML</h4>
-                        <ul>
+                    <div class="consulting-card">
+                        <h4 class="consulting-card-title">AI &amp; ML</h4>
+                        <ul class="consulting-list">
                             <li>ML pipelines</li>
                             <li>GenAI use cases</li>
                             <li>Predictive analytics</li>
                         </ul>
                     </div>
-
-                    <div class="divider"></div>
-
-                    <div class="service">
-                        <div class="icon icon-dark">🛡</div>
-                        <h4>Governance & Security</h4>
-                        <ul>
+                    <div class="consulting-card">
+                        <h4 class="consulting-card-title">Governance &amp; Security</h4>
+                        <ul class="consulting-list">
                             <li>Unity Catalog setup</li>
-                            <li>RBAC & audit logging</li>
+                            <li>RBAC &amp; audit logging</li>
                             <li>Compliance monitoring</li>
                         </ul>
                     </div>
@@ -419,170 +256,67 @@
 
         <!-- Pilot Program -->
         <section class="pilot">
-            <div class="container pilot-inner">
-                <!-- LEFT IMAGE -->
-                <div class="pilot-left">
-                    <img
-                        src="https://i.sstatic.net/y9DpT.jpg"
-                        class="img-fluid"
-                        alt="Demo"
-                    />
-                </div>
-
-                <!-- CONTENT -->
-                <div class="pilot-content">
-                    <h2>Start with a Databricks Pilot Program</h2>
-                    <p class="subtitle">
-                        Validate use cases, prove ROI, and scale with
-                        confidence.
-                    </p>
-
-                    <ul class="features">
-                        <li>2–4 week pilot engagement</li>
-                        <li>Use-case driven implementation</li>
-                        <li>Measurable ROI before scaling</li>
-                        <li>Joint execution with Databricks teams</li>
-                    </ul>
-                </div>
-
-                <!-- CTA -->
-                <div class="pilot-cta">
-                    <a href="#" class="btn-primary">
-                        Start a Pilot Program →
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Solution -->
-        <section class="section">
-            <div class="container text-center">
-                <h2>Industry-Focused solutions</h2>
-                <p>
-                    Solving industry challenges with the power of the Databricks
-                    Lakehouse.
-                </p>
-
-                <div class="row g-4 justify-content-center">
-                    <!-- Card 1 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-blue">📊</div>
-                            <div class="card-title">Financial Services</div>
-                            <div class="card-text">
-                                Fraud Detection, risk analytics, Gl Insights.
-                            </div>
-                        </div>
+            <div class="container">
+                <div class="pilot-card">
+                    <div class="pilot-content">
+                        <h2 class="pilot-heading">Start with a Databricks Pilot Program</h2>
+                        <ul class="pilot-features">
+                            <li>2–4 week pilot engagement</li>
+                            <li>Use-case driven implementation</li>
+                            <li>Measurable ROI before scaling</li>
+                            <li>Joint execution with Databricks teams</li>
+                        </ul>
                     </div>
-
-                    <!-- Card 2 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-green">👥</div>
-                            <div class="card-title">Healthcare</div>
-                            <div class="card-text">
-                                Patient analytics, predictive insights, research
-                                acceleration.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-purple">🎧</div>
-                            <div class="card-title">Retail</div>
-                            <div class="card-text">
-                                Demand forecasting, inventory optimization,
-                                customer 360.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-orange">🚚</div>
-                            <div class="card-title">Manufacturing</div>
-                            <div class="card-text">
-                                Predective maintenance, quality control,
-                                operational efficiency.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-teal">🧠</div>
-                            <div class="card-title">Media & Entertainment</div>
-                            <div class="card-text">
-                                Audience analytics, content performance, ad
-                                targeting .
-                            </div>
-                        </div>
+                    <div class="pilot-cta">
+                        <a href="#" class="pilot-btn">Start A Pilot Program</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Partener -->
-        <section class="section">
-            <div class="container text-center">
-                <h2>Why choose Dataplatr as Your Databricks Partner</h2>
-
-                <div class="row g-4 justify-content-center">
+        <!-- Partner -->
+        <section class="partner-section">
+            <div class="container">
+                <h2 class="partner-heading">Why choose Dataplatr as Your<br>Databricks Partner</h2>
+                <div class="partner-grid">
                     <!-- Card 1 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-blue">📊</div>
-                            <div class="card-title">
-                                Accelerator-Led Delivery
-                            </div>
-                            <div class="card-text">
-                                Pre-built financial data models and dashboards
-                                for faster GL insights.
-                            </div>
+                    <div class="partner-card">
+                        <div class="partner-card-img">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Accelerator-Led Delivery" />
+                        </div>
+                        <div class="partner-card-body">
+                            <h3 class="partner-card-title">Accelerator-Led Delivery</h3>
+                            <p class="partner-card-text">Pre-built financial data models and dashboards for faster GL insights.</p>
                         </div>
                     </div>
-
                     <!-- Card 2 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-green">👥</div>
-                            <div class="card-title">
-                                Strong Marketplace Presence
-                            </div>
-                            <div class="card-text">
-                                Real-time workforce insights to optimize people
-                                performance.
-                            </div>
+                    <div class="partner-card">
+                        <div class="partner-card-img">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80" alt="Strong Marketplace Presence" />
+                        </div>
+                        <div class="partner-card-body">
+                            <h3 class="partner-card-title">Strong Marketplace Presence</h3>
+                            <p class="partner-card-text">Real-time workforce insights to optimize people performance.</p>
                         </div>
                     </div>
-
                     <!-- Card 3 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-purple">🎧</div>
-                            <div class="card-title">Deep Expertise</div>
-                            <div class="card-text">
-                                360° view of contact center performance and
-                                customer experience.
-                            </div>
+                    <div class="partner-card">
+                        <div class="partner-card-img">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="Deep Expertise" />
+                        </div>
+                        <div class="partner-card-body">
+                            <h3 class="partner-card-title">Deep Expertise</h3>
+                            <p class="partner-card-text">360° view of contact center performance and customer experience.</p>
                         </div>
                     </div>
-
                     <!-- Card 4 -->
-                    <div class="col-md-6 col-lg-2">
-                        <div class="card-custom">
-                            <div class="icon icon-orange">🚚</div>
-                            <div class="card-title">
-                                Flexible Engagement Models
-                            </div>
-                            <div class="card-text">
-                                End-to-end supply chain visibility and inventory
-                                optimization.
-                            </div>
+                    <div class="partner-card">
+                        <div class="partner-card-img">
+                            <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=600&q=80" alt="Flexible Engagement Models" />
+                        </div>
+                        <div class="partner-card-body">
+                            <h3 class="partner-card-title">Flexible Engagement Models</h3>
+                            <p class="partner-card-text">End-to-end supply chain visibility and inventory optimization.</p>
                         </div>
                     </div>
                 </div>
@@ -591,60 +325,103 @@
 
         <!-- Contact Us -->
         <section class="contact">
-            <div class="container-fluid">
-                <div class="row py-4 py-lg-3">
-                    <div class="col-12 col-lg-6">
-                        <h1>Ready to Accelerate Your Databricks Journey?</h1>
-                        <p>
+            <div class="container">
+                <div class="row align-items-center g-2">
+                    <!-- Left: Heading & Text -->
+                    <div class="col-lg-6 contact-left">
+                        <h2 class="contact-heading">
+                            Ready to Accelerate Your Databricks Journey?
+                        </h2>
+                        <p class="contact-sub">
                             Talk to our experts and discover how we can help you
                             drive adoption, maximize consumptions, and unlock
                             business value.
                         </p>
                     </div>
-                    <div
-                        class="col-12 col-lg-6 d-lg-flex justify-content-center align-items-center"
-                    >
-                        <a href="#" class="btn btn-outline-light me-2">
-                            Get Free Consultation
-                            <i class="fa fa-solid fa-arrow-right-long"></i>
-                        </a>
-                        <a
-                            href="#"
-                            class="btn btn-primary mt-2 mt-lg-0 mt-sm-0"
-                        >
-                            Talk to Databricks Expert
-                            <i class="fa fa-solid fa-arrow-right-long"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="row" style="background-color: #174079">
-                    <div
-                        class="col-lg-3 d-flex p-2 border-end border-dark-subtle justify-content-lg-center align-items-center"
-                    >
-                        <i class="fa fa-solid fa-calendar"></i>
-                        <p class="mb-0">Databricks Partner Since 2019</p>
-                    </div>
-                    <div
-                        class="col-lg-3 d-flex p-2 border-end border-dark-subtle justify-content-lg-center align-items-center"
-                    >
-                        <i class="fa fa-solid fa-person-simple"></i>
-                        <p class="mb-0">30+ Certified Databricks Experts</p>
-                    </div>
-                    <div
-                        class="col-lg-3 d-flex p-2 border-end border-dark-subtle justify-content-lg-center align-items-center"
-                    >
-                        <i class="fa fa-solid fa-shield-check"></i>
-                        <p class="mb-0">Registered Consulting Partner</p>
-                    </div>
-                    <div
-                        class="col-lg-3 d-flex p-2 justify-content-lg-center align-items-center"
-                    >
-                        <i class="fa fa-solid fa-award-simple"></i>
-                        <p class="mb-0">Validated Data Partner</p>
+
+                    <!-- Right: Form Card -->
+                    <div class="col-lg-6 align-self-start">
+                        <div class="contact-form-card">
+                            <h5 class="contact-form-title">Get Free Demo</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <label class="contact-label">Your Name</label>
+                                    <input
+                                        type="text"
+                                        class="contact-input"
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="contact-label">Business Email</label>
+                                    <input
+                                        type="email"
+                                        class="contact-input"
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="contact-label">Phone Number</label>
+                                    <input
+                                        type="tel"
+                                        class="contact-input"
+                                    />
+                                </div>
+                                <div class="mb-4">
+                                    <label class="contact-label">Describe your project</label>
+                                    <textarea
+                                        class="contact-input"
+                                        rows="3"
+                                    ></textarea>
+                                </div>
+                                <button type="submit" class="contact-submit">
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <script src="assets/js/script.js"></script>
+        <script>
+            (function () {
+                const track = document.getElementById('accelTrack');
+                const dotsEl = document.getElementById('accelDots');
+                const prevBtn = document.getElementById('accelPrev');
+                const nextBtn = document.getElementById('accelNext');
+                if (!track) return;
+
+                const cards = track.querySelectorAll('.accel-card');
+                const total = cards.length;
+                const visible = 3;
+                const maxIndex = total - visible;
+                let current = 0;
+
+                // Build dots
+                for (let i = 0; i < total; i++) {
+                    const d = document.createElement('button');
+                    d.className = 'accel-dot' + (i === 0 ? ' active' : '');
+                    d.addEventListener('click', () => goTo(i <= maxIndex ? i : maxIndex));
+                    dotsEl.appendChild(d);
+                }
+
+                function goTo(idx) {
+                    current = Math.max(0, Math.min(idx, maxIndex));
+                    const cardWidth = cards[0].offsetWidth + 24;
+                    track.style.transform = `translateX(-${current * cardWidth}px)`;
+                    dotsEl.querySelectorAll('.accel-dot').forEach((d, i) => {
+                        d.classList.toggle('active', i === current);
+                    });
+                    cards.forEach((c, i) => {
+                        c.classList.toggle('center', i === current + 1);
+                    });
+                    prevBtn.disabled = current === 0;
+                    nextBtn.disabled = current === maxIndex;
+                }
+
+                prevBtn.addEventListener('click', () => goTo(current - 1));
+                nextBtn.addEventListener('click', () => goTo(current + 1));
+                goTo(0);
+            })();
+        </script>
     </body>
 </html>
