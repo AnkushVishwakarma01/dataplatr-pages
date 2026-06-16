@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dataplatr Blog - Data Analytics & AI Insights</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --brand: #1c5ffd;
+      --brand-hover: #fd7702;
+      --dark: #0d1117;
+      --gray: #6c757d;
+      --light-bg: #f7f9fc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    /* ── Navbar ── */
+    .blog-navbar {
+      background: #fff;
+      box-shadow: 0 1px 6px rgba(0,0,0,.06);
+      padding: 14px 0;
+    }
+    .blog-navbar .navbar-brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--dark);
+      letter-spacing: -.02em;
+    }
+    .blog-navbar .navbar-brand span { color: var(--brand); }
+
+    /* ── Hero Banner ── */
+    .blog-hero {
+      position: relative;
+      min-height: 520px;
+      background: #0d1117;
+      overflow: hidden;
+    }
+    .blog-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .55;
+    }
+    .blog-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,.3) 100%);
+    }
+    .blog-hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 520px;
+      padding: 60px 0 50px;
+    }
+    .blog-hero-badge {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      padding: 5px 16px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+    .blog-hero h1 {
+      color: #fff;
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 850px;
+      margin-bottom: 20px;
+    }
+    .blog-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,.85);
+      font-size: .92rem;
+    }
+    .blog-hero-meta .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,.3);
+    }
+    .blog-hero-meta .author-name {
+      font-weight: 600;
+      color: #fff;
+    }
+    .blog-hero-meta .divider-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.5);
+    }
+    .blog-hero-social {
+      display: flex;
+      gap: 10px;
+      margin-left: auto;
+    }
+    .blog-hero-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .blog-hero-social a:hover { background: var(--brand-hover); }
+
+    /* ── Breadcrumb ── */
+    .blog-breadcrumb {
+      padding: 16px 0 12px;
+      font-size: .85rem;
+      color: var(--gray);
+    }
+    .blog-breadcrumb a {
+      color: var(--gray);
+      text-decoration: none;
+    }
+    .blog-breadcrumb a:hover { color: var(--brand-hover); }
+    .blog-breadcrumb .separator { margin: 0 8px; }
+
+    /* ── Layout ── */
+    .blog-layout { padding: 30px 0 60px; }
+
+    /* ── Table of Contents ── */
+    .blog-toc {
+      position: sticky;
+      top: 90px;
+    }
+    .blog-toc-card {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #e9edf2;
+    }
+    .blog-toc-title {
+      font-size: .85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+    .blog-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .blog-toc-list li {
+      margin-bottom: 4px;
+    }
+    .blog-toc-list a {
+      display: block;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: .88rem;
+      color: #444;
+      text-decoration: none;
+      transition: all .15s;
+      border-left: 3px solid transparent;
+    }
+    .blog-toc-list a:hover,
+    .blog-toc-list a.active {
+      background: #fff;
+      color: var(--brand-hover);
+      border-left-color: var(--brand-hover);
+      font-weight: 600;
+    }
+    .blog-toc-list .toc-h3 { padding-left: 28px; font-size: .82rem; }
+
+    /* ── Blog Content ── */
+    .blog-content h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      color: var(--dark);
+      scroll-margin-top: 90px;
+    }
+    .blog-content h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--dark);
+      scroll-margin-top: 90px;
+    }
+    .blog-content p {
+      font-size: 1.05rem;
+      color: #2d3748;
+      margin-bottom: 20px;
+    }
+    .blog-content li { font-size: 1.05rem; }
+
+    /* ── RHS Sidebar ── */
+    .blog-sidebar {
+      position: sticky;
+      top: 90px;
+    }
+    .sidebar-card {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid #e9edf2;
+      margin-bottom: 24px;
+    }
+    .sidebar-card h5 {
+      font-size: .95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--dark);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--brand);
+    }
+
+    /* ── Services Form ── */
+    .sidebar-form .form-label {
+      font-size: .82rem;
+      font-weight: 600;
+      color: #333;
+    }
+    .sidebar-form .form-control {
+      font-size: .88rem;
+      border-radius: 8px;
+      border: 1px solid #dde0e6;
+      padding: 10px 14px;
+    }
+    .sidebar-form .form-control:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(255,54,33,.15);
+    }
+    .sidebar-form .btn-submit {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 11px 20px;
+      font-weight: 600;
+      font-size: .9rem;
+      width: 100%;
+      transition: background .2s;
+    }
+    .sidebar-form .btn-submit:hover { background: var(--brand-hover); }
+
+    /* ── Recent Articles ── */
+    .recent-article {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .recent-article:last-child { margin-bottom: 0; }
+    .recent-article img {
+      width: 70px;
+      height: 70px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .recent-article .ra-title {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--dark);
+      text-decoration: none;
+      line-height: 1.4;
+      display: block;
+      transition: color .15s;
+    }
+    .recent-article .ra-title:hover { color: var(--brand-hover); }
+    .recent-article .ra-date {
+      font-size: .75rem;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    /* ── CTA Subscribe ── */
+    .blog-cta {
+      background: linear-gradient(135deg, #0d1117 0%, #1a1a2e 100%);
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      margin: 48px 0;
+    }
+    .blog-cta h3 {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .blog-cta p {
+      color: rgba(255,255,255,.7);
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+    .blog-cta .subscribe-wrap {
+      display: flex;
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .blog-cta .subscribe-wrap input {
+      flex: 1;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: .95rem;
+      outline: none;
+    }
+    .blog-cta .subscribe-wrap button {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 30px;
+      font-weight: 700;
+      font-size: .95rem;
+      white-space: nowrap;
+      transition: background .2s;
+    }
+    .blog-cta .subscribe-wrap button:hover { background: var(--brand-hover); }
+
+    /* ── FAQ ── */
+    .blog-faq {
+      margin: 48px 0;
+    }
+    .blog-faq h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--dark);
+    }
+    .accordion-item {
+      border: 1px solid #e9edf2;
+      border-radius: 10px !important;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .accordion-button {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--dark);
+      padding: 18px 22px;
+      background: var(--light-bg);
+    }
+    .accordion-button:not(.collapsed) {
+      background: var(--light-bg);
+      color: var(--brand-hover);
+    }
+    .accordion-button:focus {
+      box-shadow: none;
+      border-color: transparent;
+    }
+    .accordion-body {
+      padding: 18px 22px;
+      font-size: .95rem;
+      color: #444;
+    }
+
+    /* ── Footer ── */
+    .blog-footer {
+      background: var(--dark);
+      color: rgba(255,255,255,.7);
+      padding: 40px 0;
+      font-size: .9rem;
+    }
+    .blog-footer a { color: rgba(255,255,255,.7); text-decoration: none; }
+    .blog-footer a:hover { color: var(--brand-hover); }
+
+    /* ── Responsive ── */
+    @media (max-width: 991px) {
+      .blog-hero h1 { font-size: 2rem; }
+      .blog-hero-meta { gap: 12px; }
+      .blog-hero-social { margin-left: 0; }
+      .blog-toc { position: static; margin-bottom: 30px; }
+      .blog-sidebar { position: static; }
+    }
+    @media (max-width: 576px) {
+      .blog-hero { min-height: 400px; }
+      .blog-hero-content { min-height: 400px; padding: 40px 0 30px; }
+      .blog-hero h1 { font-size: 1.5rem; }
+      .blog-cta { padding: 32px 20px; }
+      .blog-cta .subscribe-wrap { flex-direction: column; }
+      .blog-content h2 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav class="blog-navbar navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="#">Dataplatr<span>.</span></a>
+    <div>
+      <a href="#" class="btn btn-sm nav-cta">Contact Us</a>
+      <style>
+        .nav-cta {
+          background: var(--brand);
+          color: #fff;
+          border-radius: 50px;
+          font-weight: 600;
+          padding: 7px 20px;
+          font-size: .82rem;
+          transition: background .2s;
+        }
+        .nav-cta:hover { background: var(--brand-hover); color: #fff; }
+      </style>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     SECTION 1 — BANNER
+============================================================ -->
+<section class="blog-hero">
+  <img class="blog-hero-bg" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80" alt="Data Analytics" />
+  <div class="blog-hero-overlay"></div>
+  <div class="container">
+    <div class="blog-hero-content">
+      <span class="blog-hero-badge">Data Analytics</span>
+      <h1>How Data Analytics Is Transforming Business Decision-Making in 2026</h1>
+      <div class="blog-hero-meta">
+        <img class="author-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80" alt="Author" />
+        <span class="author-name">Rahul Sharma</span>
+        <span class="divider-dot"></span>
+        <span>June 16, 2026</span>
+        <span class="divider-dot"></span>
+        <span><i class="far fa-clock me-1"></i>8 min read</span>
+        <div class="blog-hero-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Copy link"><i class="fas fa-link"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="blog-breadcrumb">
+  <div class="container">
+    <a href="#">Home</a><span class="separator">/</span><a href="#">Blog</a><span class="separator">/</span><span style="color:var(--dark)">How Data Analytics Is Transforming Business...</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     MAIN LAYOUT
+============================================================ -->
+<div class="blog-layout">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- ─── LEFT: Table of Contents ─── -->
+      <aside class="col-lg-3">
+        <div class="blog-toc">
+          <div class="blog-toc-card">
+            <div class="blog-toc-title"><i class="fas fa-list me-2"></i>Table of Contents</div>
+            <ul class="blog-toc-list">
+              <li><a href="#understanding" class="active">What Is Data Analytics?</a></li>
+              <li><a href="#types">Types of Data Analytics</a></li>
+              <li><a href="#how-it-works">How Data Analytics Works</a>
+                <ul class="blog-toc-list" style="padding-left:0;">
+                  <li><a href="#step1" class="toc-h3">1. Data Collection</a></li>
+                  <li><a href="#step2" class="toc-h3">2. Data Processing</a></li>
+                  <li><a href="#step3" class="toc-h3">3. Analysis &amp; Modeling</a></li>
+                </ul>
+              </li>
+              <li><a href="#benefits">Benefits &amp; Challenges</a></li>
+              <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ─── CENTER: Blog Content ─── -->
+      <main class="col-lg-6">
+        <div class="blog-content">
+
+          <p>In today's data-driven world, organizations are increasingly turning to data analytics to uncover hidden patterns, predict future trends, and make smarter decisions. From startups to Fortune 500 enterprises, the ability to harness data has become a critical competitive advantage.</p>
+          <p>This comprehensive guide explores the fundamentals of data analytics, its various types, real-world applications, and how your organization can leverage it for transformative business outcomes.</p>
+
+          <!-- ── 2. Understanding ── -->
+          <h2 id="understanding">What Is Data Analytics?</h2>
+          <p>Data analytics is the process of examining raw datasets to draw meaningful insights, identify patterns, and support decision-making. It combines statistical methods, computational algorithms, and domain expertise to transform unstructured information into actionable intelligence.</p>
+          <p>In essence, data analytics answers questions like <em>"What happened?", "Why did it happen?", "What is likely to happen next?"</em> and <em>"What should we do about it?"</em> — enabling organizations to move from hindsight to foresight.</p>
+
+          <!-- ── CTA in-between ── -->
+          <div class="blog-cta">
+            <h3>Stay Ahead with Dataplatr Insights</h3>
+            <p>Get the latest data analytics trends, tips, and best practices delivered to your inbox.</p>
+            <div class="subscribe-wrap">
+              <input type="email" placeholder="Type your email..." />
+              <button type="button">Subscribe Now</button>
+            </div>
+          </div>
+
+          <!-- ── 3. Types ── -->
+          <h2 id="types">Types of Data Analytics</h2>
+          <p>Data analytics is commonly categorized into four progressive types, each building on the previous one:</p>
+          <ul>
+            <li><strong>Descriptive Analytics</strong> — Answers "What happened?" by summarizing historical data through dashboards and reports.</li>
+            <li><strong>Diagnostic Analytics</strong> — Answers "Why did it happen?" using drill-down, correlations, and root-cause analysis.</li>
+            <li><strong>Predictive Analytics</strong> — Answers "What could happen?" using statistical models and machine learning to forecast outcomes.</li>
+            <li><strong>Prescriptive Analytics</strong> — Answers "What should we do?" using optimization and simulation to recommend actions.</li>
+          </ul>
+          <p>Most mature analytics organizations progress through these stages, starting with descriptive reporting and advancing toward prescriptive, AI-driven decision-making.</p>
+
+          <!-- ── 4. How It Works ── -->
+          <h2 id="how-it-works">How Data Analytics Works</h2>
+          <p>The analytics process typically follows a structured pipeline that ensures data quality, consistency, and actionability.</p>
+
+          <h3 id="step1">1. Data Collection</h3>
+          <p>Raw data is gathered from multiple sources — transactional databases, CRM systems, IoT devices, web analytics, social media, and third-party APIs. The breadth and quality of data collected directly impact the reliability of downstream insights.</p>
+
+          <h3 id="step2">2. Data Processing &amp; Cleansing</h3>
+          <p>Collected data is cleaned, deduplicated, and transformed into a consistent format. This step — often the most time-consuming — addresses missing values, outliers, and inconsistencies that could skew results.</p>
+
+          <h3 id="step3">3. Analysis &amp; Modeling</h3>
+          <p>Statistical techniques and machine learning algorithms are applied to uncover relationships, patterns, and trends. This phase may involve regression analysis, clustering, classification, or time-series forecasting depending on the business question.</p>
+          <p>Once models are validated, insights are visualized through charts, dashboards, and reports that make complex findings accessible to stakeholders across the organization.</p>
+
+          <!-- ── 5. Benefits ── -->
+          <h2 id="benefits">Benefits &amp; Challenges</h2>
+          <p><strong>Benefits:</strong> Improved decision-making, operational efficiency, customer personalization, risk mitigation, and new revenue opportunities are among the top advantages organizations realize through data analytics.</p>
+          <p><strong>Challenges:</strong> Data quality issues, integration complexity, talent shortages, privacy regulations (GDPR, CCPA), and the need for cultural change remain significant hurdles. Successful analytics programs address these through strong governance, executive sponsorship, and iterative delivery.</p>
+
+          <!-- ── 6. FAQ ── -->
+          <div class="blog-faq" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faq1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1">
+                    What is the difference between data analytics and data science?
+                  </button>
+                </h3>
+                <div id="faqCollapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Data analytics focuses on examining datasets to answer specific business questions and support decision-making. Data science is broader — it involves building predictive models, algorithms, and data products. Analytics is more application-driven, while data science explores new questions through experimentation and machine learning.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faq2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2">
+                    What tools are commonly used for data analytics?
+                  </button>
+                </h3>
+                <div id="faqCollapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Popular tools include Databricks, Apache Spark, Python (pandas, NumPy), R, SQL, Tableau, Power BI, Looker, and cloud platforms like AWS, Azure, and GCP. The choice depends on data volume, use case complexity, and organizational tech stack.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faq3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3">
+                    How can small businesses benefit from data analytics?
+                  </button>
+                </h3>
+                <div id="faqCollapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Small businesses can use analytics for customer segmentation, inventory optimization, pricing strategy, marketing ROI analysis, and cash flow forecasting. Cloud-based tools and managed services make enterprise-grade analytics accessible without large upfront investments.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header" id="faq4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4">
+                    What is the role of AI in data analytics?
+                  </button>
+                </h3>
+                <div id="faqCollapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    AI and machine learning automate pattern detection, anomaly identification, and predictive modeling at scale. Techniques like natural language processing (NLP) enable sentiment analysis, while generative AI is transforming how insights are surfaced and communicated through conversational interfaces.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      <!-- ─── RIGHT: Sidebar ─── -->
+      <aside class="col-lg-3">
+        <div class="blog-sidebar">
+
+          <!-- Services / Get in Touch -->
+          <div class="sidebar-card">
+            <h5><i class="fas fa-paper-plane me-2"></i>Get Started</h5>
+            <p style="font-size:.88rem;color:#555;margin-bottom:16px;">Talk to our data experts — we'll help you find the right analytics solution.</p>
+            <form class="sidebar-form">
+              <div class="mb-2">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" placeholder="Your name" />
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" placeholder="you@company.com" />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Service Interest</label>
+                <select class="form-control form-select">
+                  <option>Data Analytics</option>
+                  <option>AI/ML Solutions</option>
+                  <option>Data Engineering</option>
+                  <option>Cloud Migration</option>
+                  <option>BI & Dashboards</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-submit">Send Request</button>
+            </form>
+          </div>
+
+          <!-- Recent Articles -->
+          <div class="sidebar-card">
+            <h5><i class="fas fa-newspaper me-2"></i>Recent Articles</h5>
+
+            <div class="recent-article">
+              <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=150&q=80" alt="AI Agents" />
+              <div>
+                <a href="#" class="ra-title">Building AI Agents with Copilot Studio</a>
+                <div class="ra-date">June 8, 2026</div>
+              </div>
+            </div>
+
+            <div class="recent-article">
+              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=150&q=80" alt="Machine Learning" />
+              <div>
+                <a href="#" class="ra-title">Small Language Models in Enterprise AI</a>
+                <div class="ra-date">June 1, 2026</div>
+              </div>
+            </div>
+
+            <div class="recent-article">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=150&q=80" alt="Data Analytics" />
+              <div>
+                <a href="#" class="ra-title">The Future of Data Analytics in 2026</a>
+                <div class="ra-date">May 25, 2026</div>
+              </div>
+            </div>
+
+            <div class="recent-article">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=150&q=80" alt="Supply Chain" />
+              <div>
+                <a href="#" class="ra-title">Supply Chain Analytics Accelerator Overview</a>
+                <div class="ra-date">May 18, 2026</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="blog-footer">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <strong style="color:#fff;">Dataplatr</strong> &mdash; Empowering data-driven decisions.
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="#" class="me-3">Privacy Policy</a>
+        <a href="#" class="me-3">Terms of Use</a>
+        <a href="#"><i class="fab fa-linkedin-in ms-2"></i></a>
+        <a href="#"><i class="fab fa-x-twitter ms-2"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
